@@ -1,0 +1,12 @@
+.ipynb_checkpoints/
+ecgen-radiology/
+NLMCXR_png/
+venv/
+ecgen-radiology.tgz
+NLMCXR_png.tgz
+glove.6B.zip
+
+glove.*
+glove_vectors
+
+TensorBoard/
