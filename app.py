@@ -709,7 +709,7 @@ def load_custom_css():
             background: transparent !important;
         }
         
-        /* File uploader text visibility */
+        /* File uploader text visibility - Comprehensive Fix */
         .stFileUploader small {
             color: #64748b !important;
             font-size: 0.875rem !important;
@@ -721,6 +721,80 @@ def load_custom_css():
         
         .stFileUploader [data-testid="stMarkdownContainer"] p {
             color: #64748b !important;
+        }
+        
+        /* Fix all text elements in file uploader */
+        .stFileUploader * {
+            color: #1e293b !important;
+        }
+        
+        .stFileUploader p,
+        .stFileUploader span,
+        .stFileUploader div,
+        .stFileUploader label {
+            color: #1e293b !important;
+        }
+        
+        /* File list items */
+        .stFileUploader [data-testid="stFileUploader"] * {
+            color: #1e293b !important;
+        }
+        
+        /* File name and size text */
+        .stFileUploader [data-testid="stFileUploaderFileName"],
+        .stFileUploader [data-testid="stFileUploaderFileSize"] {
+            color: #475569 !important;
+        }
+        
+        /* Drag and drop area text */
+        .stFileUploader [role="button"] {
+            color: #1e293b !important;
+        }
+        
+        .stFileUploader [role="button"] p,
+        .stFileUploader [role="button"] span,
+        .stFileUploader [role="button"] div {
+            color: #1e293b !important;
+        }
+        
+        /* Browse files button - ensure text is visible */
+        .stFileUploader button {
+            background: #1e293b !important;
+            color: white !important;
+            border: 1px solid #1e293b !important;
+        }
+        
+        .stFileUploader button:hover {
+            background: #3b82f6 !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        .stFileUploader button p,
+        .stFileUploader button span,
+        .stFileUploader button div {
+            color: white !important;
+        }
+        
+        /* Baseweb button styling */
+        .stFileUploader [data-baseweb="button"] {
+            background: #1e293b !important;
+            color: white !important;
+        }
+        
+        .stFileUploader [data-baseweb="button"] * {
+            color: white !important;
+        }
+        
+        /* Remove file X button - keep it visible */
+        .stFileUploader [data-testid="stFileUploaderDeleteButton"] {
+            color: #64748b !important;
+        }
+        
+        /* Override any white text */
+        .stFileUploader *[style*="color: white"],
+        .stFileUploader *[style*="color: #fff"],
+        .stFileUploader *[style*="color: #ffffff"] {
+            color: #1e293b !important;
         }
         
         /* Image Display */
@@ -1039,6 +1113,21 @@ def load_custom_css():
             color: #1e293b !important;
         }
         
+        /* Specific fix for drag and drop text */
+        .stFileUploader [role="button"] * {
+            color: #1e293b !important;
+        }
+        
+        /* Override Streamlit's default white text in uploader */
+        .stFileUploader [data-baseweb="base-input"] {
+            color: #1e293b !important;
+        }
+        
+        /* File uploader status messages */
+        .stFileUploader [data-testid="stFileUploaderStatus"] {
+            color: #64748b !important;
+        }
+        
         /* Smooth all transitions */
         * {
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -1047,6 +1136,76 @@ def load_custom_css():
         /* Disable problematic animations */
         .stFileUploader * {
             animation: none !important;
+        }
+        
+        /* Force dark text on all uploader children - comprehensive override */
+        .stFileUploader > *,
+        .stFileUploader section,
+        .stFileUploader section *,
+        .stFileUploader [data-baseweb] * {
+            color: #1e293b !important;
+        }
+        
+        /* Text elements specifically - but exclude buttons */
+        .stFileUploader p:not(button p),
+        .stFileUploader span:not(button span),
+        .stFileUploader div:not([class*="button"]):not([role="button"]):not(button) {
+            color: #1e293b !important;
+        }
+        
+        /* Ensure button text is always white */
+        .stFileUploader button,
+        .stFileUploader [role="button"][class*="button"],
+        .stFileUploader [data-baseweb="button"] {
+            background-color: #1e293b !important;
+            color: white !important;
+        }
+        
+        .stFileUploader button *,
+        .stFileUploader [role="button"][class*="button"] *,
+        .stFileUploader [data-baseweb="button"] * {
+            color: white !important;
+        }
+        
+        /* Exception: keep icons and buttons with appropriate colors */
+        .stFileUploader svg {
+            color: #64748b !important;
+        }
+        
+        /* File size and name specifically */
+        .stFileUploader [class*="file"],
+        .stFileUploader [class*="File"] {
+            color: #475569 !important;
+        }
+        
+        /* CRITICAL: Override all previous rules for buttons - must be last */
+        .stFileUploader button[type="button"],
+        .stFileUploader [data-baseweb="button"],
+        .stFileUploader [role="button"][data-baseweb] {
+            background: #1e293b !important;
+            background-color: #1e293b !important;
+            color: white !important;
+            border-color: #1e293b !important;
+        }
+        
+        .stFileUploader button[type="button"] *,
+        .stFileUploader [data-baseweb="button"] *,
+        .stFileUploader [role="button"][data-baseweb] *,
+        .stFileUploader button[type="button"] p,
+        .stFileUploader button[type="button"] span,
+        .stFileUploader button[type="button"] div {
+            color: white !important;
+            background: transparent !important;
+        }
+        
+        .stFileUploader button[type="button"]:hover {
+            background: #3b82f6 !important;
+            background-color: #3b82f6 !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        .stFileUploader button[type="button"]:hover * {
+            color: white !important;
         }
         </style>
     """, unsafe_allow_html=True)
