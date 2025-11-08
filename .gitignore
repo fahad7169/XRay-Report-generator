@@ -10,3 +10,5 @@ glove.*
 glove_vectors
 
 TensorBoard/
+
+demo_samples/
