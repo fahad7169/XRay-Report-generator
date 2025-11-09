@@ -291,30 +291,6 @@ def generate_pdf_report(patient_name: str, patient_id: str, age: str, gender: st
     elements.append(patient_table)
     elements.append(Spacer(1, 20))
     
-    # ===== EXAMINATION DETAILS SECTION =====
-    elements.append(Paragraph("EXAMINATION DETAILS", section_header_style))
-    
-    exam_details_data = [
-        [Paragraph('<b>Modality:</b>', label_style), 
-         Paragraph('Digital Radiography (DR)', value_style)],
-        [Paragraph('<b>Exam Type:</b>', label_style), 
-         Paragraph('Chest X-Ray - PA and Lateral Views', value_style)],
-        [Paragraph('<b>Analysis Method:</b>', label_style), 
-         Paragraph('AI-Assisted Deep Learning Analysis', value_style)],
-    ]
-    
-    exam_table = Table(exam_details_data, colWidths=[1.5*inch, 5*inch])
-    exam_table.setStyle(TableStyle([
-        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-        ('LEFTPADDING', (0, 0), (-1, -1), 0),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 0),
-        ('TOPPADDING', (0, 0), (-1, -1), 4),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
-    ]))
-    
-    elements.append(exam_table)
-    elements.append(Spacer(1, 20))
-    
     # ===== REPORT CONTENT SECTION =====
     # Parse and format the report text properly
     report_sections = {}
